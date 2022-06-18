@@ -21,3 +21,19 @@ def isPalindrome(self, s: str) -> bool:
                 new_string+=i.lower()
         return new_string==new_string[::-1]
         '''
+
+        
+        Valid Palindrome II (We can delete a character to make the string palindrome)
+        
+        def validPalindrome(self, s: str) -> bool:
+        l=0
+        r=len(s)-1
+        while l<r:
+            if s[l]!=s[r]:
+                skipL,skipR=s[l + 1:r +1],s[l:r]
+                return (skipL==skipL[::-1] or skipR==skipR[::-1])
+            l,r=l+1,r-1
+        return True
+        
+        
+        
